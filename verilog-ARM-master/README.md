@@ -1,8 +1,7 @@
 # verilog codes for an ARM-CPU
-Our group members are:
-1. Mina Fattahi
-2. Farhang Doroudian
+ member:
+1. Amirreza noormehr
 
-This project was done for our "logic circuits and architecture lab" class in Fall 2018.
+This project was done for My "logic circuits and architecture lab" class in Fall 2018.
 
-In this project, we simulated an ARM CPU that has been described in "Computer Organization and Design (ARM edition)" book by Patterson, using verilog HDL codes.
+In this project, I simulated an ARM CPU that has been described in "Computer Organization and Design.

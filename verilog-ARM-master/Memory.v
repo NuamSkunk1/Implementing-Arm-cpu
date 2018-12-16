@@ -11,7 +11,7 @@ module Memory
   input [n-1 : 0] DataIn,
   input [n-1 : 0] Address,
   input memRead,
-  input memWr,
+  input memWrite,
   output [n-1 : 0] DataOut
   );
   
@@ -19,7 +19,7 @@ module Memory
   assign DataOut = memRead ? Memory[Address] : {n{1'bz}}; 
   
   always @(posedge clk) begin
-      if(memWr)
+    if(memWrite)
       Memory[Address[log2Size-1 : 0]] <= DataIn;  
   end
 

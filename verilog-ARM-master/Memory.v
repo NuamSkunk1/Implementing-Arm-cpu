@@ -2,7 +2,7 @@
 
 module Memory
   #( parameter size = 1024,
-     parameter log2Size = 10, 
+     parameter LogSize = 10, 
      parameter n = 64
      )
      
@@ -20,7 +20,7 @@ module Memory
   
   always @(posedge clk) begin
     if(memWrite)
-      Memory[Address[log2Size-1 : 0]] <= DataIn;  
+      Memory[Address[LogSize-1 : 0]] <= DataIn;  
   end
 
 endmodule     

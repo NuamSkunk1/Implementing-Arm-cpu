@@ -17,7 +17,7 @@ module SignExtend
       end
       
       2'b10: begin    //conditional 
-        sigN = instruction[23];
+        sign = instruction[23];
         out = {{45{sign}}, instruction[23:5]};
       end
       

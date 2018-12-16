@@ -6,13 +6,13 @@ module SignExtend
   );
   
   wire opcodeID = instruction[31:30];
-  reg sigN;
+  reg sign;
   
   always @(instruction) begin 
     out = 64'bz;
     case (opcodeID)
       2'b00: begin   //unconditional
-        sigN = instruction[25];
+        sign = instruction[25];
         out = {{38{sign}}, instruction[25:0]};
       end 
     endcase

@@ -11,19 +11,19 @@ module SignExtend
   always @(instruction) begin 
     out = 64'bz;
     case (opcodeID)
-      2'b00: begin   //Unconditional Branch
+      2'b00: begin   //unconditional
         sigN = instruction[25];
-        out = {{38{sigN}}, instruction[25:0]};
+        out = {{38{sign}}, instruction[25:0]};
       end
       
-      2'b10: begin    //Conditional Branch
+      2'b10: begin    //conditional 
         sigN = instruction[23];
-        out = {{45{sigN}}, instruction[23:5]};
+        out = {{45{sign}}, instruction[23:5]};
       end
       
       2'b11: begin   // LDUR, STUR
-        sigN = instruction[20];
-        out = {{55{sigN}}, instruction[20:12]};
+        sign = instruction[20];
+        out = {{55{sign}}, instruction[20:12]};
       end 
     endcase
   end

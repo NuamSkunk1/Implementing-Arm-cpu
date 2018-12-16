@@ -9,21 +9,21 @@ module ALU
   (
   input [n-1 : 0] in1,
   input [n-1 : 0] in2,
-  input [3:0] opt,
+    input [3:0] operation,
   output zero,
-  output reg [n-1 : 0] ALUout
+    output reg [n-1 : 0] outputs
   );
   
   assign zero = ALUout ? 0 : 1;
-  always @(opt, in1, in2) begin
-    ALUout = 64'bz;
-    case(opt)
-      4'b0000: ALUout = in1 & in2;
-      4'b0001: ALUout = in1 | in2;
-      4'b0010: ALUout = in1 + in2;
-      4'b0110: ALUout = in1 - in2;
-      4'b0111: ALUout = in2;
-      4'b1100: ALUout = in1 ^ in2;
+  always @(operation, in1, in2) begin
+    output = 64'bz;
+    case(operation)
+      4'b0000: outputs = in1 & in2;
+      4'b0001: outputs = in1 | in2;
+      4'b0010: outputs = in1 + in2;
+      4'b0110: outputs = in1 - in2;
+      4'b0111: outputs = in2;
+      4'b1100: outputs = in1 ^ in2;
     endcase
   end
     

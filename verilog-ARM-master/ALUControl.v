@@ -9,7 +9,7 @@ module ALUControl(
 		#10;
 		casex (AluOP)
 			2'b00: out = 4'b0010; // LW SW
-			2'bx1: out = 4'b0110; // branch
+			2'bx1: out = 4'b0111; // branch
 			2'b1x: casex(in2) // R-type
 					6'bxx0000: out = 4'b0010;
 					6'bxx0010: out = 4'b0110;

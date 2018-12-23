@@ -12,6 +12,6 @@ module Control(
 			6'b000100: out = 9'b000000101; // beq
 			default: out = 9'b0;
 		endcase
-	end
+	end //compelete
 
 endmodule

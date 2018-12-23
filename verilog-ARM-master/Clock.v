@@ -1,11 +1,11 @@
-`timescale 1ns/1ns
-
-module Clock
-  #(parameter delay = 100)
-  (
-  output reg clk = 1
-  );
-  
-  always #delay clk = ~clk;
-  
+module Clock#(parameter delay=100)(
+	output reg clock
+);
+	always
+	begin
+		#delay;
+		clock = 0;
+		#delay;
+		clock = 1;
+	end
 endmodule

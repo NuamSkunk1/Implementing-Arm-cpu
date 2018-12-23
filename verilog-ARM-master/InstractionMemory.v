@@ -1,5 +1,5 @@
 module InstractionMemory(
-	input [6:0] address,
+	input [11:0] address,
 	output [31:0] instraction
 );
 	
@@ -12,7 +12,8 @@ module InstractionMemory(
 
 //32'b100011  01010 01000 0000 0000 0110 0000 lw
 //32'b000000 10001 10010 01000 00000 100000 add
-
+
+
 	end
 	
 	assign instraction = storage[address];

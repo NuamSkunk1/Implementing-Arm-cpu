@@ -1,23 +1,15 @@
-
-
-module SignExtend
-  (input [31 : 0] instruction,
-  output reg [63 : 0] out
-  );
-  
-  wire opcodeID = instruction[31:30];
-  reg sign;
-  
-  always @(instruction) begin 
-    out = 64'bz;
-    case (opcodeID)
-      2'b00: begin   //unconditional
-        sign = instruction[25];
-        out = {{38{sign}}, instruction[25:0]};
-      end 
-    endcase
-  end
-  
+module SignExtend32to64
+		#( 
+ 		 parameter n = 64,
+ 		 parameter delay = 100
+			)
+			(
+			 input [n-1:0] instruction,
+			 output reg [n-1:0] out);
+	 #delay always @(instruction) begin
+		case(instruction[31:29])
+		3'b010: out = { {55{instruction[20]}}  , instruction[20:12] }; //D
+		3'b100: out = { {45{instruction[23]}}  , instruction[23:5] }; //CBZ
+		endcase
+	end
 endmodule
-  
-  

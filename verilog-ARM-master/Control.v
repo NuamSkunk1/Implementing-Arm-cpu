@@ -1,5 +1,5 @@
 module Control(
-	input [5:0] operation,
+	input [10:0] operation,
 	output reg [8:0] out
 );
 

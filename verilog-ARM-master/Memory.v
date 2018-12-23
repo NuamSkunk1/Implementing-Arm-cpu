@@ -1,4 +1,4 @@
-`timescale 1ns/100ps
+
 
 module Memory
   #( parameter size = 1024,

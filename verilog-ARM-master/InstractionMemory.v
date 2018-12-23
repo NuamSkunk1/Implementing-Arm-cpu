@@ -1,5 +1,5 @@
 module InstractionMemory(
-	input [11:0] address,
+	input [10:0] address,
 	output [31:0] instraction
 );
 	
